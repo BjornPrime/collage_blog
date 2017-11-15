@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <strong><%= @post.title %></strong> by <%= link_to @post.user.username, user_posts_path(name: @post.user.username) %><%#= User.find(@post.user_id).email %>
+  </div>
+  <div class="panel-body">
+    <%= image_tag @post.image %>
+    <%= @post.post_body %>
+  </div>
+  <div class='panel-footer'>
+    <strong>Posted at:</strong>
+    <%= @post.updated_at.strftime("%l:%M%p on %-d %b %Y") %>
+  </div>
+</div>
+
+<button type="button" class="btn btn-default">
+  <%= link_to 'Edit', edit_post_path(@post) %>
+</button>
+
+<div id='comments'>
+
+  <%= render 'comments/form', comment: @comment %>
+
+  <% @post.comments.each do |comment| %> #use media object from bootstrap
+  <div class="media">
+    <div class="media-left">
+      <% if comment.user.avatar.url %>
+        <%= image_tag comment.user.avatar.url, :style => "width:50px;" %>
+      <% end %>
+    </div>
+    <div class="media-body">
+      <h5 class="media-heading"><strong><%= link_to comment.user.username, user_posts_path(name: comment.user.username) %> said...</strong></h5>
+      <p>
+        <%= comment.comment_entry %>
+      </p>
+      <h6>Last Updated: <%= comment.updated_at.strftime("%l:%M%p on %-d %b %Y") %></h6>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<button type='button' class="btn btn-warning">
+  <%= link_to 'Back', posts_path %>
+</button>

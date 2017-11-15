@@ -1,0 +1,29 @@
+<h1>Choose a Color!</h1>
+
+<% colors = %w(red yellow pink orange gray) %>
+
+<% if @name %>
+  <div>
+    Hello, <%= @name %>
+  </div>
+<% end %>
+
+<% colors.each do |color| %>
+
+<p>
+  <%= link_to color.capitalize, about_path(color: color) %>
+</p>
+
+<% end %>
+
+<!-- <p>
+  <%= link_to "Blue", about_path(color: 'blue') %>
+</p>
+
+<p>
+  <%= link_to "Green", about_path(color: 'green') %>
+</p>
+
+<p>
+  <%= link_to "Yellow", about_path(color: 'yellow') %>
+</p> -->
