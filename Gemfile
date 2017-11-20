@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby "2.3.3"
 gem 'bcrypt', '3.1.11', platforms: :ruby
 # gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
