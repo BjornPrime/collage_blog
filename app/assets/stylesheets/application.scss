@@ -14,3 +14,12 @@
 
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
+
+.face {
+  max-width: 100%;
+  margin: 10px;
+}
+
+.face:hover {
+  box-shadow: 10px 10px 5px #888888;
+}

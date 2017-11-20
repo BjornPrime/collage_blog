@@ -15,3 +15,29 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
+// $(document).ready(showLetter);
+// var imgsArray = ["A1", "C1", "F1", "J1", "K1", "L1", "S1", "Ñ1"];
+//
+// function generateRandomForArray() {
+//     var num = Math.floor(Math.random() * 8);
+//     return num;
+// }
+//
+// function generateRandom() {
+//     var num = Math.floor(Math.random() * 400);
+//     return num;
+// }
+//
+// function showLetter() {
+//     var letter = imgsArray[generateRandomForArray()];
+//     $("div").append("<img src='imgs/" + letter + ".png'>");
+//     var left = generateRandom();
+//     var top = generateRandom();
+//     $("div").last().css({"position":"absolute", "top": top + "px", "left": left + "px"});
+// }
+
+$(".face").on("click", function() {
+   $('#imagepreview').attr('src', $('post.image.url').attr('src')); // here asign the image to the modal when the user click the enlarge link
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});

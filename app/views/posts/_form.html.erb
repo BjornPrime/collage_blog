@@ -32,7 +32,7 @@
 
   <div class="form-group">
     <%= form.label :image %>
-    <%= form.file_field :image, id: :post_image, class: "form-control" %>
+    <%= form.file_field :image %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
